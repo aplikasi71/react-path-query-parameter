@@ -1,13 +1,18 @@
 import React from 'react';
+import {useParams as userParams} from 'react-router-dom';
 import MovieDetail from '../components/MovieDetail';
 import { getMovie } from '../utils/data';
 
+function DetailPageWrapper(){
+  const {id} = userParams();
+  return <DetailPage id={Number(id)}/>;
+}
 class DetailPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      movie: getMovie()
+      movie: getMovie(props.id)
     };
   }
 
@@ -24,4 +29,4 @@ class DetailPage extends React.Component {
   }
 }
 
-export default DetailPage;
+export default DetailPageWrapper;
