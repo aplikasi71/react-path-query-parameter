@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Movie Catalogue</h1>
+        <h1>Katalog Film </h1>
         <Navigation />
       </header>
       <main>
